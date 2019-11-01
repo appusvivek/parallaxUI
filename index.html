@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="proto-container">
+        <div class="proto"></div>
+        <div class="proto"></div>
+        <div class="proto"></div>
+        <div class="proto"></div>
+    </div>
+
+    <div class="container">
+        <div class="inner">
+            <div class="left">
+                <img src="images/logo.png" alt="logo" class="logo">
+                <div class="content">
+                    <h1>Complete<span> movie collection</span></h1>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <p class="light">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
+                </div>
+            </div>
+            <div class="right">
+                <p>Get notified when you have new updates</p>
+                <input type="text" name="email" placeholder="your email">
+                <button>Notify Me</button>
+
+                <div class="attention">
+                    <img src="images/mee.png" alt="Avatar" class="me">
+                    <img src="images/arrow.svg" alt="Arrow pointing" class="arrow">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        let left = document.querySelector('.left');
+        let content = document.querySelector('.content');
+        let protos = document.querySelectorAll('.proto');
+
+        left.addEventListener('mousemove', (event) => {
+            let move = (event.clientX * 0.05) + 4;
+            let move2 = (event.clientX * 0.003);
+
+            content.style.transform = `translateX(-${move2}%)`;
+
+            protos.forEach((proto) => {
+                proto.style.transform = `translateX(${move}%)`;
+            });
+        })
+    </script>
+</body>
+</html>
